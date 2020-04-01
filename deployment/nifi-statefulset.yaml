@@ -1,8 +1,11 @@
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: nifi
 spec:
+  selector:
+    matchLabels:
+      app: nifi
   serviceName: nifi
   replicas: 3
   podManagementPolicy: Parallel
